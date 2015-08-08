@@ -1,0 +1,23 @@
+<li ng-init="show=true">
+      <strong>{{ collection.data.ups }}</strong>
+      [<span ng-click="show = !show" ng-show="show" style="color:green;font-weight:bold;"> - </span>
+      <span ng-click="show = !show" ng-show="!show" style="color:green;font-weight:bold;"> + </span>]
+      <strong> {{ collection.data.author }} </strong>
+<!--      <strong> posted: </strong> {{ $parent.View2.getPostAge(collection.data.created_utc * 1000) }}-->
+      <strong> posted: </strong> {{ controller.getPostAge(collection.data.created_utc * 1000) }}
+      <br/>
+      <span ng-show="show">
+        {{ collection.data.body }}
+
+<!--
+        <ul ng-show="{{collection.data.replies}}"
+            ng-repeat="comment in collection.data.replies.data.children | limitTo:2"
+            class="comment-reply">
+          <comments collection="comment"></comments>
+        </ul>
+-->
+          
+          <span class="comments-placeholder"></span>
+       
+      </span>
+</li>

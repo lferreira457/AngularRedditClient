@@ -1,0 +1,296 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+#loading-bar .bar{
+  background: #00aa9a;
+}
+
+/* nav Menu start */
+
+.side-menu {
+  position: fixed;
+  background-color: #333;
+  color: #ccc;
+  padding-left: 0;
+  width: 200px;
+  height: 100%;
+  padding-top: 30px;
+  transition: transform 0.3s;
+}
+
+.side-menu-closed{
+/*  margin-left:-200px;*/
+  transform: translateX(-200px);
+}
+
+.side-menu ul {
+  display: inline;
+  list-style-type: none;
+  padding: 0;
+}
+
+.side-menu li {
+  margin: 0;
+  width: 100%;
+  line-height: 3em;
+
+}
+
+.side-menu .menu-title{
+  text-align: right;
+  padding-right: 25px;
+  font-style: italic;
+}
+
+.side-menu li a{
+  width: 100%;
+  display: block;
+  text-align: right;
+  color:#fff !important;
+}
+
+.side-menu li .togglebutton{
+  width: 100%;
+  display: block;
+  color:#fff !important;
+}
+
+.side-menu li .togglebutton * label{
+  width: 100%;
+}
+
+.side-menu li a:hover{
+  background-color:#222 !important;
+}
+
+.menu-button{
+  float:left;
+  padding:4px 11px;
+  border:1px solid #aaa;
+  border-radius: 2px;
+  margin:10px;
+  display: block;
+}
+
+.menu-button:hover{
+  background:#333 !important;
+  color:#eee !important;
+  border-color: #eee;
+}
+
+/* nav Menu end */
+
+.main-view{
+  position: fixed;
+  margin-left: 200px;
+  height: 100%;
+  width: calc(100% - 200px);
+  padding-top: 15px;
+  transition: transform 0.3s;
+  z-index: -10;
+}
+
+.main-view-fullscreen{
+  transform: translateX(-200px);
+  width: 100%
+}
+
+.panel-container{
+
+  padding-right: 5%;
+  height: calc(100% - 80px);
+  overflow-y: scroll;
+  position: absolute;
+  width: calc(100% - 15px);
+  padding-top: 3px;
+}
+
+.main-view .panel-container .ng-enter         { transition: 0.5s; transform:translateY(100%); }
+.main-view .panel-container .ng-enter-active  { transform: translateY(0); }
+
+.panel-body{
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.panel-body:hover{
+  transform: translateX(1px);
+  -webkit-box-shadow: 10px 4px 53px -19px rgba(0,0,0,0.38);
+  -moz-box-shadow: 10px 4px 53px -19px rgba(0,0,0,0.38);
+  box-shadow: 10px 4px 53px -19px rgba(0,0,0,0.38);
+}
+
+.search-bar{
+    width: calc(100% + 30px);
+  border-radius: 0;
+  margin-top: -15px;
+  margin-left: -15px;
+  padding-left: 15px;
+  background-color: #eee;
+  display: inline-block;
+}
+
+.load-form{
+  display: inline-block;
+}
+
+.saved-button{
+  float: right;
+  margin-right: 55px;
+/*  background: #888 !important;*/
+  background: #009688 !important;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/*View1 reddit panels*/
+
+.ups {
+  width: 4.5ex;
+  float: left;
+  margin-right: 9px;
+  margin-bottom: 10px;
+  margin-left: 4px;
+  background: transparent;
+  overflow: hidden;
+  text-align: center;
+}
+
+.badge{
+  background-color: #555;
+}
+
+.entry {
+  overflow: hidden;
+  margin-left: 3px;
+  opacity: 1;
+}
+
+.title {
+  font-size: medium;
+  font-weight: normal;
+  margin-bottom: 1px;
+}
+
+.entry .buttons li {
+  display: inline-block;
+  border: none;
+  padding-right: 4px;
+  line-height: 1.6em;
+}
+
+/*View1 reddit panels -END */
+
+
+/*view2*/
+
+.article-panel{
+  padding: 20px;
+  margin-right: 15px;
+  display: inline-table;
+}
+
+.parent-comment{
+  padding-right: 20px;
+  word-wrap: break-word;
+}
+
+.comment-reply{
+  border-left: 1px dotted #555;
+}
+
+.load-more-button{
+  color: #594;
+  font-style:italic;
+  cursor: pointer;
+}
+
+.comments-container{
+  height: 100%;
+  overflow-y: scroll;
+  position: absolute;
+  padding-right: 15px;
+  padding-bottom: 80px;
+  width: calc(100% - 15px);
+}
+
+.main-view .comments-container .ng-enter         { transition: 0.5s; transform:translateY(100%); }
+.main-view .comments-container .ng-enter-active  { transform: translateY(0); }
+
+
+.post-img{
+  float: left;
+  margin-right: 20px;
+  display: table-cell;
+}
+.post-title{
+  display: table-cell;
+}
+
+.preview-img{
+  max-width: 380px;
+  width:100%;
+  margin-bottom:20px;
+}
+
+.article-text{
+  background-color: #EEE;
+  border-radius: 3px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+/*view2 end*/
+
+
+
+
+/*responsive*/
+
+
+@media (max-width:480px){
+  .saved-button{
+    float: left;
+  }
+  
+  .parent-comment * ul{
+    padding-left: 2%;
+  }
+  .parent-comment * li{
+    list-style-type: none;
+  }
+    
+  .preview-img{
+    max-width: none;
+  }
+  .article-panel{
+    width: 100%;
+  }
+}
