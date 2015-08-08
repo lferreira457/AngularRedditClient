@@ -1,0 +1,51 @@
+<div class="panel panel-default search-bar">
+  
+  <span ng-click="mainAppController.toggleMenu()"
+        class="btn btn-flat btn-default menu-button">
+    <i class="mdi-action-list"></i>
+  </span>
+  
+  
+    <button onclick="history.go(-1)"
+            class="btn btn-primary">
+        Back
+    </button>
+
+</div>
+
+<div class="comments-container">
+  <div class="article-panel panel panel-default">
+    <div>
+      <img src="{{View2.articleProperties.preview.images[0].source.url}}"
+           ng-show="{{ (View2.articleProperties.preview.images[0].source.url) !== ''}}"
+           class="preview-img">
+    </div>
+     <div ng-show ='View2.articleProperties.selftext_html'
+          ng-bind-html='View2.articleProperties.selftext_html | sanitizeHtml'
+          class="article-text">
+    </div>
+    <div><a href="{{View2.articleProperties.url}}" target="_blank">link</a></div>
+  </div>
+    <p>Comments:</p>
+  
+  <ul ng-repeat="comment in View2.postItems | limitTo: View2.commentLimit" 
+      class="parent-comment panel panel-default"
+      style="padding-top:20px;padding-bottom:20px;">
+    
+    <comments collection="comment" controller="View2"></comments>
+    
+  </ul>
+  <div class="load-more-button" ng-show="View2.postItems.length > View2.commentLimit" ng-click="View2.raiseCommentLimit()">
+    load more ({{ View2.postItems.length - View2.commentLimit }} remaining)
+  </div>
+  <br/>
+</div>
+
+
+
+
+
+
+
+
+

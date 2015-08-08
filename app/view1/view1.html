@@ -1,0 +1,71 @@
+<div class="panel panel-default search-bar">
+  
+  <span ng-click="mainAppController.toggleMenu()"
+        class="btn btn-flat btn-default menu-button">
+    <i class="mdi-action-list"></i>
+  </span>
+  
+  <form ng-submit="View1.loadSubreddit()"
+        class="load-form">
+    <button type="submit" class="btn btn-primary">Load</button>
+    r/ <input type="text" ng-model="View1.sub" placeholder="front page">
+    
+  </form>
+  <button class="btn btn-primary saved-button"
+          ng-click="View1.toggleOfflineCollection()">
+    saved <span class="badge"> {{ View1.$offlineStorage.offlinePostItems.length }}</span>
+  </button>
+    
+</div>
+
+<div class="panel-container">
+  
+  <div class="panel panel-default" 
+       ng-repeat = "post in View1.postItems" 
+       ng-click="View1.viewComments(post.data.permalink)">
+      <div class="panel-body">
+
+          <div class="ups"><strong>{{ post.data.ups }} </strong></div>
+          <div style="width:85%;float:left;">
+
+            <img width="80" 
+                 ng-show="post.data.thumbnail !== 'self' 
+                          && post.data.thumbnail !== 'default'
+                          && post.data.thumbnail !== ''" 
+                 src="{{post.data.thumbnail==='default' ? 'true' : post.data.thumbnail}}" 
+                 class="post-img"/>
+            
+            <span class="post-title">{{ post.data.title }}</span>
+              
+            <button ng-cloak
+                    style="float:right;" 
+                    ng-click="$event.stopPropagation(); View1.saveOffline(post)"
+                    ng-show="View1.postItems !== View1.$offlineStorage.offlinePostItems
+                             && !(View1.postAlreadySaved(post.data.id))"
+                    class="btn btn-flat btn-primary btn-xs"
+                    >save</button>
+            
+            <button ng-cloak
+                    style="float:right;"
+                    ng-click="$event.stopPropagation();"
+                    ng-show="View1.postAlreadySaved(post.data.id)
+                              && View1.postItems !== View1.$offlineStorage.offlinePostItems"
+                    class="btn btn-primary btn-xs"
+                    >saved</button>
+            
+            <button ng-cloak
+                    style="float:right;" 
+                    ng-click="$event.stopPropagation(); View1.deleteSavedPost($index)"
+                    ng-show="View1.postItems === View1.$offlineStorage.offlinePostItems"
+                    class="btn btn-flat btn-primary btn-xs"
+                    >delete</button>
+          </div>
+
+      </div>
+  </div>
+  <div ng-show="View1.postItems.length === 0">
+      <strong class="post-title" style="text-align:center;">...Nothing here ;_;</strong>
+  </div>
+  
+</div>
+
