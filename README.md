@@ -1,3 +1,27 @@
 # Angular Reddit reader
 
 [Demo] (http://lferreira457.github.io/AngularRedditClient)
+
+To get the app working:
+
+* install bower dependencies:
+
+```
+bower install
+```
+
+* Then run a local HTTP server:
+
+```
+npm install -g live-server
+live-server
+```
+
+* To view the app, visit:
+
+  [http://localhost:8080/app](http://localhost:8080/app)
+
+-------------------
+
+Built on top of angular seed.
+
