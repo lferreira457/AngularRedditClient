@@ -4,20 +4,20 @@
 
 To get the app working:
 
-* install bower dependencies:
+-install bower dependencies:
 
 ```
 bower install
 ```
 
-* Then run a local HTTP server:
+-Then run a local HTTP server:
 
 ```
 npm install -g live-server
 live-server
 ```
 
-* To view the app, visit:
+-To view the app, visit:
 
   [http://localhost:8080/app](http://localhost:8080/app)
 
