@@ -1,4 +1,4 @@
-# Angular Reddit reader
+# Angular Reddit reader (WIP)
 
 [Demo] (http://lferreira457.github.io/AngularRedditClient)
 
@@ -24,4 +24,8 @@ live-server
 -------------------
 
 Built on top of angular seed.
+
+TODO:
+* Offline mode (currently works with saved links from view1 only)
+* Minor bug fixes
 
