@@ -20,7 +20,7 @@ angular.module('myApp', [
     cfpLoadingBarProvider.includeSpinner = false;
 }])
 
-.controller('mainController', function() {
+.controller('MainController', function() {
     this.menuClosed = false;
   
     this.toggleMenu = function() {
