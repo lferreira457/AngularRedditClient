@@ -13,7 +13,7 @@ angular.module('myApp', [
 ])
 
 .config(['$urlRouterProvider', function($urlRouterProvider) {
-    $urlRouterProvider.otherwise('view1/r/webdev');
+    $urlRouterProvider.otherwise('view1/r/');
 }])
 
 .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
