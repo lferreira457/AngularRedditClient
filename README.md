@@ -1,4 +1,4 @@
-# Angular Reddit reader (WIP)
+# Angular Reddit reader (v1.0)
 
 [Demo] (http://lferreira457.github.io/AngularRedditClient)
 
