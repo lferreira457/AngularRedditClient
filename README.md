@@ -1,6 +1,6 @@
 # Angular Reddit reader
 
-[Demo] (http://lferreira457.github.io/AngularRedditClient)
+[Demo](http://lferreira457.github.io/AngularRedditClient)
 
 To get the app working:
 
